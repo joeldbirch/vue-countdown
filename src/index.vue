@@ -38,7 +38,7 @@ export default {
   name: 'ni-countdown',
   computed: {
     usableDate () {
-      return Math.trunc(Date.parse(this.date) / 1000)
+      return Math.trunc(Date.parse(this.date.replace(/\s/, 'T')) / 1000)
     },
     seconds () {
       return (this.usableDate - this.now) % 60
